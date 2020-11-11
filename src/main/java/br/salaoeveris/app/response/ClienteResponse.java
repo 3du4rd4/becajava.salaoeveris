@@ -1,4 +1,4 @@
-package br.bancoeveris.app.response;
+package br.salaoeveris.app.response;
 
 public class ClienteResponse extends BaseResponse {
 	

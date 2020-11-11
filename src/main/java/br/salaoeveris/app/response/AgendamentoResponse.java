@@ -1,6 +1,6 @@
-package br.bancoeveris.app.response;
+package br.salaoeveris.app.response;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class AgendamentoResponse extends BaseResponse {
 	private Long Id;
@@ -15,8 +15,8 @@ public class AgendamentoResponse extends BaseResponse {
 	public Date getDataHora() {
 		return dataHora;
 	}
-	public void setDataHora(Date dataHora) {
-		this.dataHora = dataHora;
+	public void setDataHora(Date date) {
+		this.dataHora = date;
 	}
 	
 	

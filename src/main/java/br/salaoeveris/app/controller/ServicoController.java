@@ -5,10 +5,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import br.bancoeveris.app.response.BaseResponse;
-import br.bancoeveris.app.response.ServicoResponse;
 import br.salaoeveris.app.request.ServicoList;
 import br.salaoeveris.app.request.ServicoRequest;
+import br.salaoeveris.app.response.BaseResponse;
+import br.salaoeveris.app.response.ServicoResponse;
 import br.salaoeveris.app.service.ServicoService;
 
 

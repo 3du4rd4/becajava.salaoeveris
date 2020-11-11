@@ -1,15 +1,13 @@
 package br.salaoeveris.app.controller;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import br.bancoeveris.app.response.AgendamentoResponse;
-import br.bancoeveris.app.response.BaseResponse;
-import br.salaoeveris.app.request.AgendamentoList;
+
 import br.salaoeveris.app.request.AgendamentoRequest;
+import br.salaoeveris.app.response.AgendamentoResponse;
+import br.salaoeveris.app.response.BaseResponse;
 import br.salaoeveris.app.service.AgendamentoService;
 
 
@@ -44,15 +42,15 @@ public class AgendamentoController extends BaseController {
 		}
 	}
 
-	@GetMapping(path = "/agendamentos/{dataInicio},{dataFinal}")
-	public ResponseEntity listar(@PathVariable Date dataInicio, @PathVariable Date dataFinal) {
-		try {
-			AgendamentoList agendamentos = _service.pesquisa();
-			return ResponseEntity.status(HttpStatus.OK).body(agendamentos);
-		} catch (Exception e) {
-			return ResponseEntity.status(errorBase.StatusCode).body(errorBase);
-		}
-	}
+//	@GetMapping(path = "/{dataInicio},{dataFinal}")
+//	public ResponseEntity listar (@PathVariable Date dataInicio, @PathVariable Date dataFinal) {
+//		try {
+//			AgendamentoList agendamentos = _service.pesquisa();
+//			return ResponseEntity.status(HttpStatus.OK).body(agendamentos);
+//		} catch (Exception e) {
+//			return ResponseEntity.status(errorBase.StatusCode).body(errorBase);
+//		}
+//	}
 
 	@DeleteMapping(path = "/{id}")
 	public ResponseEntity deletar(@PathVariable Long id) {

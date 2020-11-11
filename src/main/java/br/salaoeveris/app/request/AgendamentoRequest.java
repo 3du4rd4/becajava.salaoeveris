@@ -1,6 +1,5 @@
 package br.salaoeveris.app.request;
 
-import java.text.DateFormat;
 import java.util.Date;
 
 import br.salaoeveris.app.model.Cliente;

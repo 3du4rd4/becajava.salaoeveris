@@ -1,17 +1,18 @@
 package br.salaoeveris.app.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.bancoeveris.app.response.BaseResponse;
-import br.bancoeveris.app.response.ClienteResponse;
 import br.salaoeveris.app.model.Cliente;
 import br.salaoeveris.app.repository.ClienteRepository;
 import br.salaoeveris.app.request.ClienteList;
 import br.salaoeveris.app.request.ClienteRequest;
+import br.salaoeveris.app.response.BaseResponse;
+import br.salaoeveris.app.response.ClienteResponse;
 
 
 @Service
@@ -75,17 +76,42 @@ public class ClienteService {
 		return response;
 	}
 
-	public ClienteList listar() {
+	public ClienteResponse listar() {
 
-		List<Cliente> lista = _repository.findAll();
+        //Lista de Clientes
+        List<Cliente> lista = _repository.findAll();
 
-		ClienteList response = new ClienteList();
-		response.setClientes(lista);
-		response.StatusCode = 200;
-		response.Message = "Clientes obtidos com sucesso.";
+        //Lista de Clientes do response dentro de um array
+        List<ClienteResponse> listarcliresponse = new ArrayList<ClienteResponse>();
 
-		return response;
-	}
+        //response recebe ClienteList novo
+        ClienteList response = new ClienteList();
+
+        //cliente recebe ClinteResponse novo
+        ClienteResponse cliente = new ClienteResponse();
+
+        //o array coloca o objeto da lista no clientelistar e varre dentro da lista
+        for (Cliente clientelistar : lista) {
+
+            //cliente recebe nova lista de ClienteResponse
+            cliente = new ClienteResponse();
+
+            cliente.setEndereco(clientelistar.getEndereco());
+            cliente.setTel(clientelistar.getTel());
+            cliente.setNome(clientelistar.getNome());
+
+            listarcliresponse.add(cliente);
+
+        }
+
+        response.setClientes(listarcliresponse);
+             
+
+        response.StatusCode = 200;
+        response.Message = "Clientes obtidos com sucesso.";
+
+        return cliente;
+    }
 
 	public BaseResponse atualizar(Long id, ClienteRequest clienteRequest) {
 		Cliente cliente = new Cliente();

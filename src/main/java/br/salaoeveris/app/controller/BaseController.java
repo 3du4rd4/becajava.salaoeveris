@@ -1,6 +1,6 @@
 package br.salaoeveris.app.controller;
 
-import br.bancoeveris.app.response.BaseResponse;
+import br.salaoeveris.app.response.BaseResponse;
 
 public class BaseController extends BaseResponse{
 	

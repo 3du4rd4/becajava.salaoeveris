@@ -6,12 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.bancoeveris.app.response.AgendamentoResponse;
-import br.bancoeveris.app.response.BaseResponse;
 import br.salaoeveris.app.model.Agendamento;
 import br.salaoeveris.app.repository.AgendamentoRepository;
 import br.salaoeveris.app.request.AgendamentoList;
 import br.salaoeveris.app.request.AgendamentoRequest;
+import br.salaoeveris.app.response.AgendamentoResponse;
+import br.salaoeveris.app.response.BaseResponse;
 
 
 @Service
@@ -61,24 +61,23 @@ public class AgendamentoService {
 			return response;
 		}
 
-		
-
+		response.setDataHora(agendamento.get().getDataHora());
 		response.Message = "Agendamento obtido com sucesso";
 		response.StatusCode = 200;
 		return response;
 	}
-
-	public AgendamentoList pesquisa() {
-		
-		List<Agendamento> lista = _repository.findAll();
-
-		AgendamentoList response = new AgendamentoList();
-		response.setAgendamentos(lista);
-		response.StatusCode = 200;
-		response.Message = "Agendamentos obtidos com sucesso.";
-
-		return response;
-	}
+//
+//	public AgendamentoList pesquisa() {
+//		
+//		List<Agendamento> lista = _repository.findAll();
+//
+//		AgendamentoList response = new AgendamentoList();
+//		response.setAgendamentos(lista);
+//		response.StatusCode = 200;
+//		response.Message = "Agendamentos obtidos com sucesso.";
+//
+//		return response;
+//	}
 
 	public BaseResponse atualizar(Long id, AgendamentoRequest agendamentoRequest) {
 		Agendamento agendamento = new Agendamento();

@@ -6,12 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.bancoeveris.app.response.BaseResponse;
-import br.bancoeveris.app.response.ServicoResponse;
 import br.salaoeveris.app.model.Servico;
 import br.salaoeveris.app.repository.ServicoRepository;
 import br.salaoeveris.app.request.ServicoList;
 import br.salaoeveris.app.request.ServicoRequest;
+import br.salaoeveris.app.response.BaseResponse;
+import br.salaoeveris.app.response.ServicoResponse;
 
 
 
