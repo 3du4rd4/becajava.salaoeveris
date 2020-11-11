@@ -42,15 +42,6 @@ public class AgendamentoController extends BaseController {
 		}
 	}
 
-//	@GetMapping(path = "/{dataInicio},{dataFinal}")
-//	public ResponseEntity listar (@PathVariable Date dataInicio, @PathVariable Date dataFinal) {
-//		try {
-//			AgendamentoList agendamentos = _service.pesquisa();
-//			return ResponseEntity.status(HttpStatus.OK).body(agendamentos);
-//		} catch (Exception e) {
-//			return ResponseEntity.status(errorBase.StatusCode).body(errorBase);
-//		}
-//	}
 
 	@DeleteMapping(path = "/{id}")
 	public ResponseEntity deletar(@PathVariable Long id) {

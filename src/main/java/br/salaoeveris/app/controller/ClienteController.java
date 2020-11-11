@@ -32,16 +32,6 @@ public class ClienteController extends BaseController {
 		}
 	}
 
-	@GetMapping(path = "/{id}")
-	public ResponseEntity obter(@PathVariable Long id) {
-		try {
-			ClienteResponse response = _service.obter(id);
-			return ResponseEntity.status(response.StatusCode).body(response);
-		} catch (Exception e) {
-			return ResponseEntity.status(errorBase.StatusCode).body(errorBase);
-		}
-	}
-
 	@GetMapping
 	public ResponseEntity listar() {
 		try {

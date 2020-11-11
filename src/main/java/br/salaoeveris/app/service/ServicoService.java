@@ -47,24 +47,6 @@ public class ServicoService {
 		return base;
 	}
 
-	public ServicoResponse obter(Long id) {
-		Optional<Servico> servico = _repository.findById(id);
-		ServicoResponse response = new ServicoResponse();
-
-		if (servico == null) {
-			response.Message = "Servico não encontrado";
-			response.StatusCode = 404;
-			return response;
-		}
-
-		response.setNome(servico.get().getNome());
-		
-
-		response.Message = "Servico obtido com sucesso";
-		response.StatusCode = 200;
-		return response;
-	}
-
 	public ServicoList listar() {
 
 		List<Servico> lista = _repository.findAll();

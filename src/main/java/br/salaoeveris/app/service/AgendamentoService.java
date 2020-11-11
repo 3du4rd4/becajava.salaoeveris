@@ -66,18 +66,6 @@ public class AgendamentoService {
 		response.StatusCode = 200;
 		return response;
 	}
-//
-//	public AgendamentoList pesquisa() {
-//		
-//		List<Agendamento> lista = _repository.findAll();
-//
-//		AgendamentoList response = new AgendamentoList();
-//		response.setAgendamentos(lista);
-//		response.StatusCode = 200;
-//		response.Message = "Agendamentos obtidos com sucesso.";
-//
-//		return response;
-//	}
 
 	public BaseResponse atualizar(Long id, AgendamentoRequest agendamentoRequest) {
 		Agendamento agendamento = new Agendamento();
